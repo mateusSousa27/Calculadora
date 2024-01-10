@@ -1,0 +1,76 @@
+#Clean{
+    background-color: orange;
+
+    height: 5vh;
+    width: 4.5vw;
+
+    font-size: 3vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1vh;
+    border: none;
+}
+.operation{
+    background-color: lightgrey;
+
+    height: 5vh;
+    width: 4.5vw;
+
+    font-size: 3vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1vh;
+    border: none;
+}
+#up{
+
+    width: 20vw;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#down{
+    display: flex;
+    flex-direction: row;
+
+    max-width: 20vw;
+
+    justify-content: space-between;
+}
+.num{
+    background-color: lightgrey;
+
+    height: 7vh;
+    width: 4.5vw;
+
+    font-size: 3vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2.5vh;
+
+    border-radius: 1vh;
+    border: none;
+}
+#column_zero{
+    display: flex;
+    justify-content: space-between ;
+    
+    width: 15vw;
+
+    position: absolute;
+    top: 65vh;
+
+    #zero{
+        width: 9.7vw;
+    }
+}

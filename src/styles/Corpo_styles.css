@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200&display=swap');
+
+
+*{
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+#Calculadora{
+    background-color: gray;
+
+    height: 65vh;
+    width: 25vw;
+
+    border-radius: 1vw;
+
+    #sup{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #inf{
+
+        margin-left: 2.5vw;
+        margin-top: 3vh;
+    }
+}
+#principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
