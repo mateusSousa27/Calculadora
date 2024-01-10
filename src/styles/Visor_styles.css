@@ -1,6 +1,9 @@
 #visor{
     background-color: lightgray;
 
+    overflow-x: hidden;
+    overflow-y: hidden;
+
     width: 20vw;
     height: 6vh;
 
