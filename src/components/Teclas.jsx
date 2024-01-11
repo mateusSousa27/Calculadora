@@ -7,6 +7,12 @@ export default function Teclas() {
     let limpar = false
     let num;
 
+    let deletar;
+    let contador;
+
+    let novoNumero=[];
+    let number1;
+
     function clean(){
         limpar = true;
 
@@ -20,9 +26,7 @@ export default function Teclas() {
         if(localStorage.getItem('numero') != 0){
             num = localStorage.getItem('numero');
 
-            num = num + e.target.value
-
-            localStorage.setItem('numero', num)
+            localStorage.setItem('numero', num + e.target.value)
 
             window.location.reload();
         }else{
@@ -30,6 +34,31 @@ export default function Teclas() {
 
             window.location.reload();
         }
+    }
+
+    function delet(){
+        deletar = localStorage.getItem('numero')
+
+        contador = deletar.length - 1;
+
+        for (let index = 0; index < contador; index++) {
+            
+            novoNumero = novoNumero + deletar[index]
+         
+        }
+
+        if (novoNumero.length == 0) {
+            localStorage.setItem('numero', 0);
+
+            window.location.reload();
+        }else{
+            localStorage.setItem('numero', novoNumero);
+
+            window.location.reload();
+        }
+
+        
+
     }
 
     function operadores(){
@@ -41,7 +70,7 @@ export default function Teclas() {
             
             <div id="up">
                 <button id="Clean" onClick={clean}>C</button>
-                <button className="operation"><FaDeleteLeft /></button>
+                <button className="operation" onClick={delet    }><FaDeleteLeft /></button>
                 <button className="operation" onClick={operadores}>%</button>
                 <button className="operation" onClick={operadores}>/</button>
             </div>

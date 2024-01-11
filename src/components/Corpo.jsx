@@ -5,16 +5,13 @@ import Teclas from "./Teclas";
 
 export default class calculadora extends Component{
     render(){
-
-        let num = localStorage.getItem('numero')
-
         return(
             <div id="principal">
 
                 <div id="Calculadora">
 
                     <div id="sup">
-                    <Visor numero = {num}/>
+                    <Visor/>
                     </div>
 
                     <div id="inf">
