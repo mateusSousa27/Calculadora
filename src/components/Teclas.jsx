@@ -97,33 +97,33 @@ export default function Teclas() {
         switch (operador) {
             case "+":
 
-                resultado = parseInt(number_1) + parseInt(number_2)
+                resultado = parseFloat(number_1) + parseFloat(number_2)
 
                 localStorage.setItem('numero', resultado)
                 break;
             case "x":
     
-                resultado = parseInt(number_1) * parseInt(number_2)
+                resultado = parseFloat(number_1) * parseFloat(number_2)
     
                 localStorage.setItem('numero', resultado)
                 break;
             case "-":
         
-                resultado = parseInt(number_1) - parseInt(number_2)
+                resultado = parseFloat(number_1) - parseFloat(number_2)
         
                 localStorage.setItem('numero', resultado)
                 break;
                  
             case "%":
         
-                resultado = (parseInt(number_1)/100) * parseInt(number_2)
+                resultado = (parseFloat(number_1)/100) * parseFloat(number_2)
         
                 localStorage.setItem('numero', resultado)
                 break;
             
             case "/":
         
-                resultado = parseInt(number_1) / parseInt(number_2)
+                resultado = parseFloat(number_1) / parseFloat(number_2)
         
                 localStorage.setItem('numero', resultado)
                 break;
