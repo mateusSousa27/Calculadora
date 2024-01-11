@@ -1,17 +1,19 @@
-import { useEffect } from "react";
 import "../styles/Teclas_styles.css";
 import { FaDeleteLeft } from "react-icons/fa6";
 
 export default function Teclas() {
-
-    let limpar = false
     let num;
 
     let deletar;
     let contador;
 
     let novoNumero=[];
-    let number1;
+
+    let operador;
+    let number_1;
+    let number_2; 
+    let resultado;
+
 
     function clean(){
         limpar = true;
@@ -61,8 +63,76 @@ export default function Teclas() {
 
     }
 
-    function operadores(){
-        alert("Em produção")
+    function operadores(e){
+
+        operador = e.target.value;
+
+        localStorage.setItem('operador', operador)
+
+        if(number_1 > 0){
+            number_2 = localStorage.getItem('numero')
+
+            localStorage.setItem('number_02', number_2);
+        }else{
+            number_1 = localStorage.getItem('numero')
+
+            localStorage.setItem('numero', ' ')
+
+            localStorage.setItem('number_1', number_1)
+        }
+
+    }
+
+    function result(){
+        number_1 = localStorage.getItem('number_1')
+        number_2 = localStorage.getItem('numero')
+
+        console.log(parseInt(number_1));
+        console.log(parseInt(number_2));
+
+        console.log(localStorage.getItem('operador'));
+
+        operador = localStorage.getItem('operador')
+
+        switch (operador) {
+            case "+":
+
+                resultado = parseInt(number_1) + parseInt(number_2)
+
+                localStorage.setItem('numero', resultado)
+                break;
+            case "x":
+    
+                resultado = parseInt(number_1) * parseInt(number_2)
+    
+                localStorage.setItem('numero', resultado)
+                break;
+            case "-":
+        
+                resultado = parseInt(number_1) - parseInt(number_2)
+        
+                localStorage.setItem('numero', resultado)
+                break;
+                 
+            case "%":
+        
+                resultado = (parseInt(number_1)/100) * parseInt(number_2)
+        
+                localStorage.setItem('numero', resultado)
+                break;
+            
+            case "/":
+        
+                resultado = parseInt(number_1) / parseInt(number_2)
+        
+                localStorage.setItem('numero', resultado)
+                break;
+              
+            default:
+                break;
+        }
+
+        window.location.reload()
     }
 
     return(
@@ -70,9 +140,9 @@ export default function Teclas() {
             
             <div id="up">
                 <button id="Clean" onClick={clean}>C</button>
-                <button className="operation" onClick={delet    }><FaDeleteLeft /></button>
-                <button className="operation" onClick={operadores}>%</button>
-                <button className="operation" onClick={operadores}>/</button>
+                <button className="operation" onClick={delet}><FaDeleteLeft /></button>
+                <button className="operation" onClick={operadores} value="%">%</button>
+                <button className="operation" onClick={operadores} value="/">/</button>
             </div>
 
             <div id="down">
@@ -101,10 +171,10 @@ export default function Teclas() {
                 </div>
 
                 <div id="column_quatro">
-                    <button className="num" onClick={operadores} value={"x"}>X</button>
-                    <button className="num" onClick={operadores} value={'-'}>-</button>
-                    <button className="num" onClick={operadores} value={'+'}>+</button>
-                    <button className="num">=</button>
+                    <button className="num" onClick={operadores} value="x">X</button>
+                    <button className="num" onClick={operadores} value='-'>-</button>
+                    <button className="num" onClick={operadores} value='+'>+</button>
+                    <button className="num" onClick={result}>=</button>
                 </div>
 
                 
