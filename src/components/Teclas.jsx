@@ -3,7 +3,7 @@ import { FaDeleteLeft } from "react-icons/fa6";
 
 export default function Teclas() {
     let num;
-
+    let limpar = false
     let deletar;
     let contador;
 
